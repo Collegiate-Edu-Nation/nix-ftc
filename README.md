@@ -7,19 +7,17 @@ Offers reproducible and immutable Android support for the FTC SDK on Linux and M
 
 Note: git is required, though if you're using flake-enabled nix, this is a safe assumption in my book.  
 
-There's several options for initial project bootstrapping. I personally have user scripts copy flakes into my project folders to avoid needing to remember yet another repo name, but this is probably more common:  
+There's several options for initial project bootstrapping. I personally have user scripts copy flakes into my project folders to avoid needing to remember yet another repo name, but this is more common:  
 
-    git clone https://github.com/camdenboren/nix-ftc.git
-
-I may convert this repo into a template in the future to enable using nix flake init -t
+    nix flake init -t github:camdenboren/nix-ftc
 
 Adjust the flake as needed, then:  
 
     nix develop
 
-This will throw you into a shell-based development environment with Java and the Android SDK. All you'll need to do is open FtcRobotController in your editor of choice, and you're ready to start working in TeamCode/  
+This will load a shell-based development environment with JDK17 and the Android SDK. All you'll need to do is open FtcRobotController in your editor of choice, and you're ready to start working in TeamCode/  
 
-Gradlew builds are supported (and necessary for more advanced app modifications), but builds can be omitted if you prefer uploading TeamCode/ via OnBot (in which case you can probably leave out the Android SDK).
+Gradlew builds are supported (and necessary for more advanced app modifications), but builds can be omitted if you prefer uploading TeamCode/ via OnBot (in which case you can probably leave out the Android SDK). If you're new to Android development, the most basic commands are printed to console upon entry.
 
 Once the dev session is complete, close your editor and leave the shell with:
 
