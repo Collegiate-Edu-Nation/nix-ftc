@@ -7,9 +7,9 @@ Offers reproducible and immutable Android support for the FTC SDK on Linux and M
 
 Note: git is required, though if you're using flake-enabled nix, this is a safe assumption in my book.  
 
-There's several options for initial project bootstrapping. I personally have user scripts copy flakes into my project folders to avoid needing to remember yet another repo name, but this seems to be the most common approach:  
+There's several options for initial project bootstrapping. I personally have user scripts copy flakes into my project folders to avoid needing to remember yet another repo name (and I may convert this repo into a template in the future to enable using nix flake init -t), but this is probably more common:  
 
-    nix flake init -t github:camdenboren/nix-ftc
+    git clone https://github.com/camdenboren/nix-ftc.git
 
 Adjust the flake as needed, then:  
 
