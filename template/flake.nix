@@ -60,6 +60,7 @@
         shellHook = ''
           echo -e "\nFTC Development Environment via Nix Flake\n"
           echo -e "Build app: ./gradlew build"
+          echo -e "Uninstall app: adb -d uninstall com.qualcomm.ftcrobotcontroller"
           echo -e "Install app: adb -d install ./TeamCode/build/outputs/apk/release/TeamCode-release.apk\n"
           if ! test -d ./FtcRobotController; then 
             echo -e "Fetching FTC SDK..." && git clone https://github.com/FIRST-Tech-Challenge/FtcRobotController.git && echo ""
