@@ -17,7 +17,7 @@ Adjust the flake as needed, then:
 
 This will load a shell-based development environment with JDK17 and the Android SDK. All you'll need to do is open FtcRobotController in your editor of choice, and you're ready to start working in TeamCode/  
 
-Gradlew builds are supported (and necessary for more advanced app modifications), but builds can be omitted if you prefer uploading TeamCode/ via OnBot (in which case you can probably leave out the Android SDK). If you're new to Android development, the most basic commands are printed to console upon entry.
+Gradlew builds are supported (and necessary for offline testing), but manual builds can be omitted if you prefer uploading TeamCode/ via OnBot (this is what I do). If you're new to Android development, the most basic commands are printed to console upon entry.
 
 Once the dev session is complete, close your editor and leave the shell with:
 
