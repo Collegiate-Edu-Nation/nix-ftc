@@ -9,7 +9,7 @@ Note: git is required, though if you're using flake-enabled nix, this is a safe 
 
 There's several options for initial project bootstrapping. I personally have user scripts copy flakes into my project folders to avoid needing to remember yet another repo name, but this is more common:  
 
-    nix flake init -t github:camdenboren/nix-ftc
+    nix flake init -t github:collegiate-edu-nation/nix-ftc
 
 Adjust the flake as needed, then:  
 
