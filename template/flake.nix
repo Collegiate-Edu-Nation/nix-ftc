@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+      url = "github:nixos/nixpkgs/nixos-24.05";
     };
     android-nixpkgs = {
       url = "github:tadfisher/android-nixpkgs";
@@ -42,7 +42,7 @@
               [
                 # Useful packages for building and testing.
                 build-tools-30-0-3
-                cmdline-tools-latest
+                cmdline-tools-13-0
                 platform-tools
                 platforms-android-29
 
