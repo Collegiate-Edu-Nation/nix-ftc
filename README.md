@@ -1,41 +1,43 @@
 # nix-ftc
-FTC Development Environment via Nix Flake.  
+![Static Badge](https://img.shields.io/badge/Android_API-29-blue)
+![Static Badge](https://img.shields.io/badge/OpenJDK-17.0.10-blue)
+![Static Badge](https://img.shields.io/badge/Platforms-Linux,_macOS-green)
+![Static Badge](https://img.shields.io/badge/Powered_by_Nix-grey?logo=nixOS&logoColor=white)
 
-Offers reproducible and immutable Android support for the FTC SDK on Linux and MacOS (and Windows via WSL) without the need for Android Studio, enabling advanced FTC development in your editor of choice without userspace clutter. Emulation is not included by default, but relevant boilerplate need only be uncommented.
-<details>
-<summary><b>Usage</b></summary>
+FTC Development Environment via Nix Flake 
 
-Note: git is required, though if you're using flake-enabled nix, this is a safe assumption in my book.  
+Offers reproducible and immutable Android support for the FTC SDK without the need for Android Studio, enabling advanced FTC development in your editor of choice without userspace clutter
 
-There's several options for initial project bootstrapping. I personally have user scripts copy flakes into my project folders to avoid needing to remember yet another repo name, but this is more common:  
+Emulation is not included by default, but relevant boilerplate need only be uncommented
 
-    nix flake init -t github:collegiate-edu-nation/nix-ftc
+## Usage
 
-Adjust the flake as needed, then:  
+<b>Must install flake-enabled Nix before running</b>
 
-    nix develop
+* Create a directory and enter it
 
-This will load a shell-based development environment with JDK17 and the Android SDK. All you'll need to do is open FtcRobotController in your editor of choice, and you're ready to start working in TeamCode/  
+        mkdir ftc && cd ftc
 
-Gradlew builds are supported (and necessary for offline testing), but manual builds can be omitted if you prefer uploading TeamCode/ via OnBot (this is what I do). If you're new to Android development, the most basic commands are printed to console upon entry.
+* Add this flake to the directory
 
-Once the dev session is complete, close your editor and leave the shell with:
+        nix flake init -t github:collegiate-edu-nation/nix-ftc
 
-    exit  
-</details>
+* Adjust the flake as needed, then:  
 
-<details>
-<summary><b>Supported Architectures</b></summary>
+        nix develop
 
-For Linux, only x86_64 is supported due to upstream. For MacOS, both aarch64 and x86_64 are supported (though x86_64 is untested on my end).
-</details>
+This will load a shell-based development environment with OpenJDK and the Android SDK. All you'll need to do is open FtcRobotController in your editor of choice, and you're ready to start working in TeamCode
 
-<details>
-<summary><b>Implementation Details</b></summary>
+Gradlew builds are supported, but manual builds can be omitted if you prefer uploading TeamCode via OnBot
 
-First, Android-Nixpkgs is used for multiple reasons: simple bootstrapping, several supported systems, up-to-date packages, and a functioning emulator.  
+Once the dev session is complete, close your editor and leave the shell
 
-Second, Gradlew complains about read-only file systems if the expected versions of tooling are missing from $PATH (expected Nix behavior), so necessary versions are specified.  
+    exit
 
-Last, the aapt2 binary included in build-tools doesn't support the --source-path arg, so the aapt package from nixpkgs is used in its place.
-</details>
+## Implementation
+
+* Android-Nixpkgs is used for multiple reasons: simple bootstrapping, several supported systems, up-to-date packages, and a functioning emulator
+
+* Gradlew complains about read-only file systems if the expected versions of tooling are missing from $PATH (expected Nix behavior), so necessary versions are specified
+
+* The aapt2 binary included in build-tools doesn't support the --source-path arg, so the aapt package from nixpkgs is used in its place
