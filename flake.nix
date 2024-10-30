@@ -1,10 +1,12 @@
 {
-  outputs = { self }: {
-    templates = {
-      ftc = {
-        path = ./template;
+  outputs =
+    { self }:
+    {
+      templates = {
+        ftc = {
+          path = ./template;
+        };
       };
+      defaultTemplate = self.templates.ftc;
     };
-    defaultTemplate = self.templates.ftc;
-  };
 }
