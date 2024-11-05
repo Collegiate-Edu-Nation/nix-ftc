@@ -41,3 +41,6 @@ Once the dev session is complete, close your editor and leave the shell
 * Gradlew complains about read-only file systems if the expected versions of tooling are missing from $PATH (expected Nix behavior), so necessary versions are specified
 
 * The aapt2 binary included in build-tools doesn't support the --source-path arg, so the aapt package from nixpkgs is used in its place
+
+## License
+[GPLv3](COPYING)
