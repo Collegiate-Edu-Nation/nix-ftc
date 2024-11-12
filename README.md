@@ -1,6 +1,6 @@
 # nix-ftc
-![Static Badge](https://img.shields.io/badge/Android_API-29-blue)
-![Static Badge](https://img.shields.io/badge/OpenJDK-17.0.10-blue)
+![Static Badge](https://img.shields.io/badge/Android_API-30-blue)
+![Static Badge](https://img.shields.io/badge/OpenJDK-21.0.3-blue)
 ![Static Badge](https://img.shields.io/badge/Platforms-Linux,_macOS-green)
 ![Static Badge](https://img.shields.io/badge/Powered_by_Nix-grey?logo=nixOS&logoColor=white)
 
