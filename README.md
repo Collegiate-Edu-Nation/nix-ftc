@@ -26,7 +26,7 @@ Emulation is not included by default, but relevant boilerplate need only be unco
 
         nix develop
 
-This will load a shell-based development environment with OpenJDK and the Android SDK. All you'll need to do is open FtcRobotController in your editor of choice, and you're ready to start working in TeamCode
+This will load a shell-based development environment with OpenJDK and the Android SDK. All you'll need to do is open the repo in your editor of choice, and you're ready to start working in TeamCode
 
 Gradlew builds are supported, but manual builds can be omitted if you prefer uploading TeamCode via OnBot
 

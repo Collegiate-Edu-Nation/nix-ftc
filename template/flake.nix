@@ -86,15 +86,22 @@
             GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${pkgs.aapt}/bin/aapt2";
 
             shellHook = ''
+              if ! test -d ./FtcRobotController; then
+                echo -e "Fetching FTC SDK..."
+                git clone https://github.com/FIRST-Tech-Challenge/FtcRobotController.git
+                mv FtcRobotController FtcRobotController.backup
+                mv FtcRobotController.backup/{.,}* .
+                rm -r FtcRobotController.backup
+                echo ""
+              fi
+
               echo -e "\nFTC Development Environment via Nix Flake\n"
               echo -e "Build app:     ./gradlew assemble"
               echo -e "Test app:      ./gradlew test"
               echo -e "WiFi Connect:  adb connect 192.168.43.1:5555"
               echo -e "Uninstall app: adb uninstall com.qualcomm.ftcrobotcontroller"
               echo -e "Install app:   adb install ./TeamCode/build/outputs/apk/release/TeamCode-release.apk\n"
-              if ! test -d ./FtcRobotController; then 
-                echo -e "Fetching FTC SDK..." && git clone https://github.com/FIRST-Tech-Challenge/FtcRobotController.git && echo ""
-              fi
+
               java --version && echo ""
               adb --version && echo ""
             '';
