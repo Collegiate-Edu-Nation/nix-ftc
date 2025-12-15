@@ -72,15 +72,14 @@
         { pkgs, android-sdk }:
         {
           default = pkgs.mkShell {
-            packages =
-              [
-                android-sdk
-              ]
-              ++ (with pkgs; [
-                bashInteractive
-                jdk21
-                aapt
-              ]);
+            packages = [
+              android-sdk
+            ]
+            ++ (with pkgs; [
+              bashInteractive
+              jdk21
+              aapt
+            ]);
 
             # override aapt2 binary w/ nixpkgs'
             GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${pkgs.aapt}/bin/aapt2";
@@ -106,7 +105,7 @@
               adb --version && echo ""
             '';
 
-            # prints emu. info and cmds if desired 
+            # prints emu. info and cmds if desired
             # echo -e "Useful commands:\nAdd avd: avdmanager create avd -n test -k \"system-images;android-29;google_apis;x86_64\""
             # echo -e "List emulators: emulator -list-avds"
             # echo -e "Run emulator: emulator -avd test -no-metrics"
