@@ -6,7 +6,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-24.05";
+      url = "github:nixos/nixpkgs/nixos-25.11";
     };
     android-nixpkgs = {
       url = "github:tadfisher/android-nixpkgs";
@@ -16,9 +16,9 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       android-nixpkgs,
+      ...
     }:
     let
       supportedSystems = [
@@ -52,13 +52,12 @@
               android-sdk
             ]
             ++ (with pkgs; [
-              bashInteractive
               jdk21
               aapt
             ]);
 
             # override aapt2 binary w/ nixpkgs'
-            GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${pkgs.aapt}/bin/aapt2";
+            env.GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${pkgs.aapt}/bin/aapt2";
 
             shellHook = ''
               if ! test -d ./FtcRobotController; then
