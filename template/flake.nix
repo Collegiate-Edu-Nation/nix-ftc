@@ -22,10 +22,10 @@
     }:
     let
       forEachSupportedSystem = (
-        import ./lib/forEachSupportedSystem.nix { inherit nixpkgs android-nixpkgs; }
+        import ./nix/lib/forEachSupportedSystem.nix { inherit nixpkgs android-nixpkgs; }
       );
     in
     {
-      devShells = forEachSupportedSystem (import ./shell.nix);
+      devShells = forEachSupportedSystem (import ./nix/shell.nix);
     };
 }

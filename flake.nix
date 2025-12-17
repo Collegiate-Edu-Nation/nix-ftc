@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 {
+  nixConfig.bash-prompt = ''\n\[\033[1;31m\][devShell:\w]\$\[\033[0m\] '';
+
   inputs = {
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-25.11";
@@ -21,7 +23,7 @@
     }:
     let
       forEachSupportedSystem = (
-        import ./template/lib/forEachSupportedSystem.nix { inherit nixpkgs android-nixpkgs; }
+        import ./template/nix/lib/forEachSupportedSystem.nix { inherit nixpkgs android-nixpkgs; }
       );
     in
     {
@@ -33,6 +35,6 @@
       defaultTemplate = self.templates.ftc;
 
       # referencing here to build the shell in CI
-      devShells = forEachSupportedSystem (import ./template/shell.nix);
+      devShells = forEachSupportedSystem (import ./template/nix/shell.nix);
     };
 }

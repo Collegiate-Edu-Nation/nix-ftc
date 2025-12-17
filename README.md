@@ -39,6 +39,18 @@ Once the dev session is complete, close your editor and leave the shell
 exit
 ```
 
+### Binary Cache
+
+You can drastically speed up build times for the devShell via the provided binary cache by adding [Garnix] to your nix-config
+
+```nix
+nix.settings.substituters = [ "https://cache.garnix.io" ];
+nix.settings.trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
+```
+
+> [!NOTE]
+> As the CI build uses the parent flake's lockfile, the cache will become stale within a few weeks of the most recent commit. You may be able to circumvent this by copying this lockfile to your repo
+
 ## Implementation
 
 - [android-nixpkgs] is used for multiple reasons:
@@ -48,6 +60,8 @@ exit
   - A functioning emulator _(not included by default, but can be helpful)_
 
 - Rather than forking the [FTC SDK], this project clones it in the `shellHook` to minimize maintenance since FTC generally releases multiple versions each season w/o bumping external dependencies
+
+- In the spirit of minimizing maintenance, the template is intended to be pulled sans lockfile by end users. As this breaks reproducibility, however, this prevents directly building the template's devShell in CI. To circumvent this, the devShell is composed in a highly modular manner, which enables building it in the parent flake as well (which includes a lockfile), allowing for CI builds w/o necessitating several updates per season
 
 - Gradlew complains about read-only file systems if the expected versions of tooling are missing from `$PATH` (expected Nix behavior), so necessary versions are specified
 
@@ -59,4 +73,5 @@ exit
 
 [FTC SDK]: https://github.com/FIRST-Tech-Challenge/FtcRobotController
 [OnBot Java]: https://ftc-docs.firstinspires.org/en/latest/programming_resources/onbot_java/OnBot-Java-Tutorial.html
+[Garnix]: https://garnix.io/
 [android-nixpkgs]: https://github.com/tadfisher/android-nixpkgs
