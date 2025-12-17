@@ -18,7 +18,6 @@
     {
       nixpkgs,
       android-nixpkgs,
-      self,
       ...
     }:
     let
@@ -28,11 +27,11 @@
     in
     {
       templates = {
-        ftc = {
+        default = {
           path = ./template;
+          description = "FTC Development Environment via Nix Flake";
         };
       };
-      defaultTemplate = self.templates.ftc;
 
       # referencing here to build the shell in CI
       devShells = forEachSupportedSystem (import ./template/nix/shell.nix);
