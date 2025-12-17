@@ -1,7 +1,7 @@
 # nix-ftc
 
 ![Static Badge](https://img.shields.io/badge/Platforms-Linux,_macOS-forestgreen?style=for-the-badge)
-[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fcollegiate-edu-nation%2Fnix-ftc%3Fbranch%3Dmain&style=for-the-badge&color=grey&labelColor=grey)](https://garnix.io/repo/collegiate-edu-nation/nix-ftc)
+[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2FCollegiate-Edu-Nation%2Fnix-ftc%3Fbranch%3Dmain&style=for-the-badge&color=grey&labelColor=grey)](https://garnix.io/repo/Collegiate-Edu-Nation/nix-ftc)
 ![Static Badge](https://img.shields.io/badge/Powered_by_Nix-grey?style=for-the-badge&logo=nixOS&logoColor=white)
 
 FTC Development Environment via Nix Flake
