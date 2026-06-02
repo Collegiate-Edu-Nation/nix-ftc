@@ -1,7 +1,7 @@
 # nix-ftc
 
-![Static Badge](https://img.shields.io/badge/Platforms-Linux,_macOS-forestgreen?style=for-the-badge)
-[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2FCollegiate-Edu-Nation%2Fnix-ftc%3Fbranch%3Dmain&style=for-the-badge&color=grey&labelColor=grey)](https://garnix.io/repo/Collegiate-Edu-Nation/nix-ftc)
+![Static Badge](https://img.shields.io/badge/Platforms-Linux,_macOS-blue?style=for-the-badge)
+![Dynamic Badge](https://img.shields.io/github/actions/workflow/status/Collegiate-Edu-Nation/nix-ftc/build.yaml?branch=main&style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/Powered_by_Nix-grey?style=for-the-badge&logo=nixOS&logoColor=white)
 
 FTC Development Environment via Nix Flake
@@ -42,11 +42,11 @@ exit
 
 ### Binary Cache
 
-You can drastically speed up build times for the devShell via the provided binary cache by adding [Garnix] to your nix-config
+You can drastically speed up build times for the devShell via our binary cache by adding [Cachix] to your nix-config
 
 ```nix
-nix.settings.substituters = [ "https://cache.garnix.io" ];
-nix.settings.trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
+nix.settings.substituters = [ "https://edu-nation.cachix.org" ];
+nix.settings.trusted-public-keys = [ "edu-nation.cachix.org-1:S2s7ZDuLeFrV2qhfzXWNt+/XlnGxUjvUHv0WI+BvM+0=" ];
 ```
 
 > [!NOTE]
@@ -74,5 +74,5 @@ nix.settings.trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObb
 
 [FTC SDK]: https://github.com/FIRST-Tech-Challenge/FtcRobotController
 [OnBot Java]: https://ftc-docs.firstinspires.org/en/latest/programming_resources/onbot_java/OnBot-Java-Tutorial.html
-[Garnix]: https://garnix.io/
+[Cachix]: https://www.cachix.org/
 [android-nixpkgs]: https://github.com/tadfisher/android-nixpkgs
