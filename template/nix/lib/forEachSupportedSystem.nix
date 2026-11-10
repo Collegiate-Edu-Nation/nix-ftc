@@ -17,7 +17,7 @@ nixpkgs.lib.genAttrs supportedSystems (
     pkgs = nixpkgs.legacyPackages.${system};
     android-sdk = android-nixpkgs.sdk.${system} (
       sdkPkgs: with sdkPkgs; [
-        build-tools-34-0-0
+        build-tools-35-0-0
         cmdline-tools-13-0
         platform-tools
         platforms-android-30

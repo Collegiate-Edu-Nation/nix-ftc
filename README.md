@@ -8,6 +8,12 @@ FTC Development Environment via Nix Flake
 
 Declarative, reproducible, and immutable Android support for the [FTC SDK] without the need for Android Studio, enabling advanced FTC development in your editor of choice without userspace clutter
 
+> [!IMPORTANT]
+> This repo has been archived due to a lack of engagement and capacity. You should still be
+> able to leverage the template for the foreseeable future as we bumped the build tools to
+> v35 before archiving, but users should not expect any further updates (e.g., for upstream
+> SDK changes).
+
 ## Usage
 
 **Must install flake-enabled Nix before running**
